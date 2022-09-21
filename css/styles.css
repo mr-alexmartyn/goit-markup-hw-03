@@ -337,8 +337,6 @@ body {
 .footer {
   display: flex;
   background-color: var(--bgd-color);
-}
-.footer .container {
   padding-top: 60px;
   padding-bottom: 60px;
 }
