@@ -12,6 +12,38 @@
   --active-button-background: #188ce8; /* цвет активности главной кнопки */
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  min-width: 100%;
+}
+
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  /* outline: 2px solid tomato; */
+}
+
+.section {
+  padding: 94px 0px;
+}
 body {
   background-color: var(--white-color);
   color: var(--primary-text-color);
@@ -21,6 +53,7 @@ body {
 }
 
 .button {
+  display: inline-block;
   font-family: Roboto, sans-serif;
   cursor: pointer;
 }
@@ -31,6 +64,13 @@ body {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*   min-width: 216px; */
+  padding: 10px 32px;
+  border-radius: 4px;
 }
 .button-secondary {
   background-color: var(--team-bgd-color);
@@ -57,9 +97,17 @@ body {
 /* ----------------------HEADER----------------------- */
 
 .header-navigation {
+  display: flex;
+  align-items: center;
+}
+
+.header-navigation-block {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
+  display: block;
   font-family: Raleway, normal;
   color: var(--accent-color);
   text-decoration: none;
@@ -74,10 +122,15 @@ body {
 }
 .header-navigation-list {
   list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin-left: 93px;
 }
 
-/* .header-navigation-item {
-} */
+.header-navigation-item:not(:last-child) {
+  margin-right: 50px;
+}
+
 .header-navigation-link {
   color: var(--title-text-color);
   text-decoration: none;
@@ -85,6 +138,9 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: block;
 }
 
 .current {
@@ -92,7 +148,9 @@ body {
 }
 
 .header-contact-list {
+  display: flex;
   list-style-type: none;
+  margin-left: auto;
 }
 
 .mail-link,
@@ -103,6 +161,13 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: block;
+}
+.mail-link,
+.tel-link:not(:last-child) {
+  margin-right: 50px;
 }
 
 .header-navigation-link:hover,
@@ -117,6 +182,11 @@ body {
 /* --------------------HERO------------------------ */
 .hero {
   background-color: var(--bgd-color);
+  text-align: center;
+  margin-bottom: 94px;
+}
+.hero .container {
+  padding: 200px 0px;
 }
 
 .hero-title {
@@ -125,7 +195,10 @@ body {
   line-height: 60px;
   letter-spacing: 0.06em;
   color: var(--white-color);
-  text-transform: uppercase; /* Понимаю что возможно рано, но что бы не прописывать вручную + об этом Андрей говорил в лекции*/
+  text-transform: uppercase;
+  max-width: 696px;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .button-hero:hover,
@@ -136,10 +209,21 @@ body {
 /* ---------------------FEATURES----------------------- */
 
 .feature {
+  margin-bottom: 94px;
 }
 
 .feature-list {
   list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feature-list-item {
+  flex-basis: calc(100% / 4 - 30px);
+  min-width: 270px;
+}
+.feature-list-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .feature-list-title {
@@ -148,6 +232,7 @@ body {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .feature-list-text {
@@ -156,6 +241,7 @@ body {
 
 /* ----------------------OUR WORK---------------------------- */
 .work {
+  margin-bottom: 94px;
 }
 
 .work-title {
@@ -164,20 +250,30 @@ body {
   font-size: 36px;
   line-height: 1.16;
   letter-spacing: 0.03em;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .work-list {
   list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.work-list > .item {
+  flex-basis: calc(100% / 3 -30px);
+}
+
+.work-list > .item:not(:last-child) {
+  margin-right: 30px;
 }
 
 /* -----------------------------OUR TEAM---------------------------------- */
 
 .our-team {
   background-color: var(--team-bgd-color);
-}
-
-.our-team-list {
-  list-style-type: none;
+  display: flex;
+  padding: 90px 0px;
 }
 
 .our-team-title {
@@ -185,24 +281,62 @@ body {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
+.our-team-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+.card {
+  background: var(--white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.our-team-list > .item {
+  flex-basis: calc(100% / 4-30px);
+}
+
+.our-team-list > .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.our-team-discr {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 .teammate-name {
   color: var(--title-text-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
+  text-align: center;
 }
 
 .teammate-profession {
   font-size: 16px;
   line-height: 1.18;
+
+  margin-top: 10px;
+  text-align: center;
 }
 
 /* ----------------------------------FOOTER----------------------------- */
 
 .footer {
+  display: flex;
   background-color: var(--bgd-color);
+}
+.footer .container {
+  padding: 60px 0px;
+}
+
+.footer .logo {
+  margin-bottom: 20px;
 }
 
 .footer-logo-text {
@@ -214,6 +348,15 @@ body {
 
 .footer-adress-list {
   list-style-type: none;
+}
+
+.footer-adress-list > .item {
+  display: block;
+  margin-bottom: 9px;
+  padding: 0px;
+}
+.footer-adress-list > .item:last-child {
+  margin-bottom: 0px;
 }
 
 .footer-adress-map {
