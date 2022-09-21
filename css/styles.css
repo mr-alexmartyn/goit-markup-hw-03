@@ -38,7 +38,7 @@ img {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-  outline: 2px solid tomato;
+  /* outline: 2px solid tomato; */
 }
 
 .section {
